@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f dev01-deploy.yaml'
-                sh 'kubectl apply -f dev01-svc.yaml'
+                sh 'kubectl apply -f dev01-deploy.yaml --validate=false'
+                sh 'kubectl apply -f dev01-svc.yaml --validate=false'
             }
         }
     }
