@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t finish07sds/dev01:1.0 .'
+                sh 'docker build -t gustjq/dev01:1.0 .'
+		sh 'docker push gustjq/dev01:1.0'
             }
         }
         stage('Push to DockerHub') {
